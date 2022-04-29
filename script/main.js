@@ -92,10 +92,10 @@ const App = new Vue({
       // this.socket.emit('video-control', params)
 
       // 使用GoEasy
-      this.goEasyConnect.publish({
-        channel: this.channel,
-        message: params
-      })
+      // this.goEasyConnect.publish({
+      //   channel: this.channel,
+      //   message: params
+      // })
 
       // 使用leancloud-realtime
       this.chatRoom.send(new TextMessage(params))
@@ -193,32 +193,32 @@ const App = new Vue({
     /* 使用GoEasy*/
 
     // /* 创建GoEasy连接*/
-    this.goEasyConnect = new GoEasy({
-      host: "hangzhou.goeasy.io", // 应用所在的区域地址，杭州：hangzhou.goeasy.io，新加坡：singapore.goeasy.io
-      appkey: this.appkey,
-      onConnected: function () {
-        console.log('连接成功！')
-      },
-      onDisconnected: function () {
-        console.log('连接断开！')
-      },
-      onConnectFailed: function (error) {
-        console.log(error, '连接失败或错误！')
-      }
-    })
-    
+    // this.goEasyConnect = new GoEasy({
+    //   host: "hangzhou.goeasy.io", // 应用所在的区域地址，杭州：hangzhou.goeasy.io，新加坡：singapore.goeasy.io
+    //   appkey: this.appkey,
+    //   onConnected: function () {
+    //     console.log('连接成功！')
+    //   },
+    //   onDisconnected: function () {
+    //     console.log('连接断开！')
+    //   },
+    //   onConnectFailed: function (error) {
+    //     console.log(error, '连接失败或错误！')
+    //   }
+    // })
+    //
     const that = this
-    
-    /* 监听GoEasy连接*/
-    this.goEasyConnect.subscribe({
-      channel: this.channel,
-      onMessage: function (message) {
-        const result = JSON.parse(message.content)
-        if (result.user !== that.userId) {
-          that.resultHandler(result)
-        }
-      }
-    })
+    //
+    // /* 监听GoEasy连接*/
+    // this.goEasyConnect.subscribe({
+    //   channel: this.channel,
+    //   onMessage: function (message) {
+    //     const result = JSON.parse(message.content)
+    //     if (result.user !== that.userId) {
+    //       that.resultHandler(result)
+    //     }
+    //   }
+    // })
 
     const realtime = new Realtime({
       appId: this.appId,
