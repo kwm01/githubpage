@@ -68,14 +68,14 @@
 
             <div class="address-input">
                 <input v-model="videoSrc" type="text" placeholder="视频地址">
-                <a href="javascript:;" class="submit-btn" @click="addVideo">添加视频</a>
+                <a href="javascript:;" class="submit-btn" @click="addVideo">添加视频源</a>
             </div>
             <h2 class="video-list-title">视频列表：</h2>
             <ul class="video-list">
                 <li class="video-item" v-for="(videoItem,index) in videoList" :key="index">
                     <p class="video-name">{{videoItem}}</p>
                     <div class="button-box">
-                        <a href="javascript:;" class="button-play" @click="playVideoItem(videoItem)">播放</a>
+                        <a href="javascript:;" class="button-play" @click="playVideoItem(videoItem)">加载视频</a>
                         <a href="javascript:;" class="button-play" @click="deleteVideoItem(index)">删除</a>
                     </div>
                 </li>
