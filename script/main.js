@@ -156,9 +156,9 @@ const App = new Vue({
     const localList = JSON.parse(localStorage.getItem('videoList'))
 
     let defaultList = [];
-    defaultList.push('https://5glrs.blob.core.windows.net/rongqi/【高清MP4电影www.ttbtdytt.com】星际穿越.IMAX版.Interstellar.2014.BD720p.国英双语.特效中英双字.mp4?sv=2020-08-04&ss=bqtf&srt=sco&sp=rwdlacuptfx&se=2022-06-04T11:22:01Z&sig=%2Bbgi4EqV64upDKWzBp%2F9%2BXwE1GYt58QkxLZGLyfQ%2B8I%3D&_=1654312927469');
     defaultList.push('https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8');
     this.videoList = localList ? localList : defaultList;
+    this.videoList.push('https://5glrs.blob.core.windows.net/rongqi/【高清MP4电影www.ttbtdytt.com】星际穿越.IMAX版.Interstellar.2014.BD720p.国英双语.特效中英双字.mp4?sv=2020-08-04&ss=bqtf&srt=sco&sp=rwdlacuptfx&se=2022-06-04T11:22:01Z&sig=%2Bbgi4EqV64upDKWzBp%2F9%2BXwE1GYt58QkxLZGLyfQ%2B8I%3D&_=1654312927469');
 
     const currentPlayVideo = localStorage.getItem('currentPlayVideo')
 
